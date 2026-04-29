@@ -1,9 +1,5 @@
-
 <script setup>
 import { ref } from 'vue';
-import { useRouter } from 'vue-router';
-
-const router = useRouter();
 
 // Dummy blog data (replace with real data or API call)
 const blogPosts = ref([
@@ -20,10 +16,6 @@ const blogPosts = ref([
         summary: 'A personal website is a great way to showcase your work. Here are some tips and tricks for building one with Vue.'
     }
 ]);
-
-function goToPost(id) {
-    router.push(`/blogs/${id}`);
-}
 </script>
 
 <template>
@@ -113,30 +105,25 @@ function goToPost(id) {
     font-size: 1.08rem;
     flex: 1;
 }
+.read-more-link {
+    display: inline-block;
+    margin-top: 1.1rem;
+    color: #4f8cff;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 1.05rem;
+    transition: color 0.18s;
+}
+.read-more-link:hover {
+    color: #222;
+    text-decoration: underline;
+}
+@media (max-width: 600px) {
+    .blog-list-container {
+        padding: 1rem 0.3rem;
+    }
+    .blog-list-title {
+        font-size: 1.5rem;
+    }
+}
 </style>
-.read-more-link {
-    display: inline-block;
-    margin-top: 1.1rem;
-    color: #4f8cff;
-    font-weight: 600;
-    text-decoration: none;
-    font-size: 1.05rem;
-    transition: color 0.18s;
-}
-.read-more-link:hover {
-    color: #222;
-    text-decoration: underline;
-}
-.read-more-link {
-    display: inline-block;
-    margin-top: 1.1rem;
-    color: #4f8cff;
-    font-weight: 600;
-    text-decoration: none;
-    font-size: 1.05rem;
-    transition: color 0.18s;
-}
-.read-more-link:hover {
-    color: #222;
-    text-decoration: underline;
-}
